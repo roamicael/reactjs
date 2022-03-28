@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './componets/NavBar/NavBar';
-import itemsListContainer from './componets/itemsListContainer/itemsListContainer';
+import ItemsListContainer from './componets/ItemsListContainer/ItemsListContainer';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
 
       <NavBar/>
 
-      <itemsListContainer greeting={"holaa coders"}/>  
+      <ItemsListContainer greeting="holaa coders" />  
 
     </div>
 
