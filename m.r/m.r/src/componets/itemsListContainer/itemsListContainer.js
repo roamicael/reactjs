@@ -1,3 +1,5 @@
+
+
 const itemsListContainer = (props) =>{
 
     console.log(props.greeting);
@@ -7,4 +9,4 @@ const itemsListContainer = (props) =>{
 
 }
 
-export default itemsListContainer
+export default itemsListContainer;

@@ -10,7 +10,9 @@ function App() {
       <NavBar/>
 
       <itemsListContainer greeting={"holaa coders"}/>  
+
     </div>
+
   );
 }
 
