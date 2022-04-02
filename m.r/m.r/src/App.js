@@ -1,15 +1,18 @@
-import logo from './logo.svg';
+import react from "react"
 import './App.css';
 import NavBar from './componets/NavBar/NavBar';
-import ItemsListContainer from './componets/ItemsListContainer/ItemsListContainer';
+import Counter from './componets/ItemCount/ItemContador';
 
-function App() {
+const App = () => {
+
+const handleOnAdd = (quantity) =>{
+  console.log(`se agregaron ${quantity} productos`)
+}
+
   return (
     <div className="App">
 
-      <NavBar/>
-
-      <ItemsListContainer greeting="holaa coders" />  
+      <Counter initial={0} onAdd={handleOnAdd} />
 
     </div>
 
