@@ -11,8 +11,9 @@ const handleOnAdd = (quantity) =>{
 
   return (
     <div className="App">
+      <NavBar/>
 
-      <Counter initial={0} onAdd={handleOnAdd} />
+      <Counter initial={0} onAdd={handleOnAdd} stock={5}/>
 
     </div>
 
