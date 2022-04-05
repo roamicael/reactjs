@@ -1,12 +1,27 @@
 
+import { useState, useEffect} from "react"
+import { getProducts } from "../../StockProducts"
+import ItemsList from "../ItemsList/ItemsList"
 
 const ItemsListContainer = (props) =>{
 
-    console.log(props.greeting);
+    const [productos, setProducts] = useState([]) 
+
+    useEffect(() =>{
+      getProducts().then(productos =>{
+        setProducts(productos)
+    }).catch(error => {
+        console.log(error)
+    })
+},[]) 
+
+
     return(
-        <h1>{props.greeting}</h1>
+        <div>
+           <ItemsList productos={productos} />
+        </div>   
     )
 
 }
 
-export default ItemsListContainer;
+export default ItemsListContainer
