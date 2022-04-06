@@ -1,24 +1,29 @@
 import { useState } from "react"
+import "./ItemContador.css"
 
-const Counter = ({initial, onAdd}) =>{
-    const [count, setCount] = useState({title:"producto", count: 0});
+const Counter = ({initial, onAdd, stock}) =>{
+    const [count, setCount] = useState(initial);
 
     const increment = () => {
-         setCount({...count, count:count.count + 1})
+         if(count < stock){
+             setCount(count + 1)
+         }else{
+             alert("no hay mas disponibles")
+         }
     }
     const decrement = () => {
-        setCount({...count, count:count.count - 1})
+        if (count > initial) {
+            setCount(count - 1);
+        }      
     }
 
-    console.log(count);
-
     return(
-        <div>
+        <div className="body">
             <p>camisa negra</p>
             <button onClick={increment} className="btn btn-secondary">+</button>
-            <p>{count.count}</p>
+            <p>{count}</p>
             <button onClick={decrement} className="btn btn-secondary">-</button><br/><br/>
-            <button className="btn btn-primary" onClick={()=> onAdd(count.count)}>agregar al carrito</button>
+            <button className="btn btn-primary" onClick={()=> onAdd(count)}>agregar al carrito</button>
 
         </div>
 

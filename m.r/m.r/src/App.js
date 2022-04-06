@@ -5,13 +5,14 @@ import ItemsListContainer from "./componets/ItemsListContainer/ItemsListContaine
 
 const App = () => {
 
-//const handleOnAdd = (quantity) =>{
-  //console.log(`se agregaron ${quantity} productos`)}
+const handleOnAdd = (quantity) =>{
+  console.log(`se agregaron ${quantity} productos`)}
 
 
   return (
     <div className="App">
      <NavBar/>
+     <Counter initial={0} onAdd={handleOnAdd} stock={5}/>
      <ItemsListContainer/>
 
     </div>
