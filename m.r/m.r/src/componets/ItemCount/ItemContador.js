@@ -19,7 +19,7 @@ const Counter = ({initial, onAdd, stock}) =>{
 
     return(
         <div className="body">
-            <p>camisa negra</p>
+            <br/>
             <button onClick={increment} className="btn btn-secondary">+</button>
             <p>{count}</p>
             <button onClick={decrement} className="btn btn-secondary">-</button><br/><br/>

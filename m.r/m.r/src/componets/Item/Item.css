@@ -1,6 +1,11 @@
 img{
-    width: 400px;
+    width: 300px;
 }
-.prod{
+body{
     text-align: center;
+}
+.row{
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 10px;
 }
