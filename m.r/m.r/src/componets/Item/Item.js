@@ -1,40 +1,32 @@
+import { Link } from "react-router-dom"
 import "./Item.css"
-import Counter from "../ItemCount/ItemContador"
-
-// estructura...
-const Item = ({nombre, img, precio}) =>{
-
-    const detalles = () =>{
-
-        console.log("detalles")
-    }
 
 //  contador de productos..
-    const prod = (quantity) =>{
-        console.log(`se agregaron ${quantity} productos`)}
-       
+        const Item = ({nombre, img, precio, id}) =>{
+
+        
     
     return(
 
     <div className="row">
-         <div class="col">
-                <div class="card">
-                    <h5 class="card-title">{nombre}</h5>
-                        <div class="card-body">
+         <div className="col" >
+                <div className="card" >
+                    <h5 className="card-title bg-success p-2 text-dark bg-opacity-25">{nombre}</h5>
+                        <div className="card-body">
                            <img src={img}  alt={nombre}/> 
-                           <hr/>                           
-                            <p class="card-text">precio: ${precio}</p>
-                            <button onClick={detalles}>ver detalles</button>
-                            <Counter initial={0} stock={5} onAdd={prod}/>       
-
+                                                
+                            <p className="card-text" ><strong>Precio:   ${precio}</strong></p>                       
+                                  
                         </div>
+                        <footer>
+                            <Link to={`/Detail/${id}`} type="button" className="btn btn-outline-success">ver detalle</Link>
+                        </footer>
                  </div>
              </div>
        </div>
         
 
     )
-}
-
+    }
 export default Item
 
