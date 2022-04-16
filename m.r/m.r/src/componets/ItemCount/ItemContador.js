@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./ItemContador.css"
 
-const Counter = ({initial, onAdd, stock}) =>{
+const Counter = ({initial=0 , onAdd, stock}) =>{
     const [count, setCount] = useState(initial);
 
     const increment = () => {

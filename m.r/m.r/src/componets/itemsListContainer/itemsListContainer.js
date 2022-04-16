@@ -16,11 +16,15 @@ const ItemsListContainer = (props) =>{
     }) .catch(error => {
         console.log(error)
     })
-},[categoryId]) 
+},[categoryId])
+
+const handleClick = () => {
+    console.log("hice click")
+}
 
 
     return(
-        <div>
+        <div onClick={handleClick}>
             <h1>{props.greeting}</h1>
            <ItemsList productos={productos} />
         </div>   
