@@ -13,18 +13,18 @@ const ItemsListContainer = (props) =>{
     useEffect(() =>{
       getProducts(categoryId) .then(productos =>{
         setProducts(productos)
-    }) .catch(error => {
-        console.log(error)
-    })
-},[categoryId])
+      }) .catch(error => {
+            console.log(error)
+        }) 
+    },[categoryId])
 
-const handleClick = () => {
-    console.log("hice click")
-}
+    const handleClick = () => {
+        console.log("hice click")
+    }
 
 
     return(
-        <div onClick={handleClick}>
+        <div  onClick={handleClick}>
             <h1>{props.greeting}</h1>
            <ItemsList productos={productos} />
         </div>   

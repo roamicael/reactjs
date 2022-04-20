@@ -1,14 +1,24 @@
 import {  Link } from "react-router-dom"
 import Counter from "../ItemCount/ItemContador"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import CartContext from "../CartContext/CartContext"
 
- const ItemDetail = ({nombre, img, precio, id, descripcion,stock}) =>{
-   
- const [quantity, seQuantity] = useState()
+
+ const ItemDetail = ({nombre, img, precio, id, descripcion}) =>{
+
+
+ const {addItem, isIntCart } = useContext(CartContext)
+
 
  const handleClick = (counter) =>{
-   console.log("agregado")
-   seQuantity(counter)
+
+   const productObj = {
+     id,nombre,precio
+   }
+
+   addItem({...productObj, quantity: counter})
+
+
  }
  
 
@@ -19,7 +29,7 @@ import { useState } from "react"
    <div className="row g-0">
     <div className="col-md-4">
       <img src={img}  alt={nombre} className="img-fluid rounded-start"/>
-     {quantity > 0 ? <Link to="/cart">ir al carrito</Link> : <Counter stock={stock} onAdd={handleClick}/> }
+     {isIntCart(id) ? <Link to="/cart">ir al carrito</Link> : <Counter onAdd={handleClick}/> }
     </div>
     <div className="col-md-8">
       <div className="card-body">

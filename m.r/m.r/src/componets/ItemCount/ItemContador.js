@@ -1,20 +1,14 @@
 import { useState } from "react"
 import "./ItemContador.css"
 
-const Counter = ({initial=0 , onAdd, stock}) =>{
-    const [count, setCount] = useState(initial);
+const Counter = ({ onAdd}) =>{
+    const [count, setCount] = useState(0);
 
     const increment = () => {
-         if(count < stock){
-             setCount(count + 1)
-         }else{
-             alert("no hay mas disponibles")
-         }
+        setCount(count + 1)
     }
     const decrement = () => {
-        if (count > initial) {
-            setCount(count - 1);
-        }      
+            setCount(count - 1);  
     }
 
     return(
