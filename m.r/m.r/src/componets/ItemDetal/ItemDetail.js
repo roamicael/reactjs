@@ -1,25 +1,27 @@
 import {  Link } from "react-router-dom"
 import Counter from "../ItemCount/ItemContador"
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import CartContext from "../CartContext/CartContext"
+
+
 
 
  const ItemDetail = ({nombre, img, precio, id, descripcion}) =>{
 
-
  const {addItem, isIntCart } = useContext(CartContext)
+ 
 
 
- const handleClick = (counter) =>{
 
-   const productObj = {
-     id,nombre,precio
+ const handleClick= (counter) => {
+
+     const productObj = {
+       id, nombre, precio, quantity: counter
+     }
+
+     addItem(productObj)
+
    }
-
-   addItem({...productObj, quantity: counter})
-
-
- }
  
 
 
@@ -29,7 +31,7 @@ import CartContext from "../CartContext/CartContext"
    <div className="row g-0">
     <div className="col-md-4">
       <img src={img}  alt={nombre} className="img-fluid rounded-start"/>
-     {isIntCart(id) ? <Link to="/cart">ir al carrito</Link> : <Counter onAdd={handleClick}/> }
+     {isIntCart(id) ? <Link to="/Cart" className="btn btn-primary">finalizar compra</Link> : <Counter onAdd={handleClick}/> }
     </div>
     <div className="col-md-8">
       <div className="card-body">
@@ -49,7 +51,6 @@ import CartContext from "../CartContext/CartContext"
           </small>
         </h6>
         <br/>
-        <button className="btn btn-primary">finalizar comprar</button>
         </div>
     </div>
   </div>
