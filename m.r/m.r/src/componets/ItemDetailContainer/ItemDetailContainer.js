@@ -23,7 +23,6 @@ const ItemDetailContainer = () =>{
       //     setLoading(false) 
       // })
       
-      //firebase
       getDoc(doc(firestoreDb, "productos", productId)).then(response =>{
           console.log(response)
           const productos = { id: response.id, ...response.data() }
